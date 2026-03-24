@@ -3,7 +3,7 @@ import requests
 import base64
 import io
 
-app = Flask(_name_, template_folder="../templates", static_folder="../static")
+app = Flask(__name__, template_folder="../templates", static_folder="../static")
 
 import os # Add this at the very top of your file (Line 1)
 from dotenv import load_dotenv # Add this import for loading environment variables
