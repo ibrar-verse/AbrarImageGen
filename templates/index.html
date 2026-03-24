@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AbrarImageGen AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='first.css') }}">
+</head>
+<body>
+
+    <div class="glass-card">
+        <div class="profile-header">
+            <img src="{{ url_for('static', filename='abra.jpg') }}" class="profile-img" alt="Abrar Ahmad">
+            <h1>AbrarImageGen</h1>
+            <p class="subtitle">AI Creation Portal</p>
+        </div>
+
+        <form action="/generate" method="post" class="gen-form">
+            <input type="text" name="prompt" placeholder="Describe your masterpiece..." required>
+            <button type="submit" class="glow-button">Generate Magic</button>
+        </form>
+
+        {% if image_url %}
+        <div class="result-area">
+            <h3>Your Result:</h3>
+            <img src="{{ image_url }}" class="ai-output">
+        </div>
+        {% endif %}
+    </div>
+
+</body>
+</html>
